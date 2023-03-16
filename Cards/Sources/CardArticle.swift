@@ -45,9 +45,9 @@ import UIKit
     }
 
     //Priv Vars
-    var titleLbl = UILabel ()
-    var subtitleLbl = UILabel()
-    var categoryLbl = UILabel()
+    public var titleLbl = UILabel ()
+    public var subtitleLbl = UILabel()
+    public var categoryLbl = UILabel()
     
     // View Life Cycle
     override public init(frame: CGRect) {
