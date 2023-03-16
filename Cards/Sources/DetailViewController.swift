@@ -9,7 +9,7 @@ import UIKit
 
 internal class DetailViewController: UIViewController {
     
-    var blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight ))
+    var blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark ))
     var detailView: UIView?
     var scrollView = UIScrollView()
     var snap = UIView()
