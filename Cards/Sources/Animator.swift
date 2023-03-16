@@ -42,8 +42,8 @@ class Animator: NSObject, UIViewControllerAnimatedTransitioning {
             // Blur and fade with completion
             UIView.animate(withDuration: velocity, delay: 0, options: .curveEaseOut, animations: {
                 
-                detailVC.blurView.alpha = 0
-                detailVC.snap.alpha = 0
+                detailVC.blurView.alpha = 1
+                detailVC.snap.alpha = 1
                 self.card.backgroundIV.layer.cornerRadius = self.card.cardRadius
                 
             }, completion: { _ in
