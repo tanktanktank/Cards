@@ -103,11 +103,11 @@ import UIKit
         
         actionBtn.addTarget(self, action: #selector(buttonTapped), for: UIControl.Event.touchUpInside)
         
-        backgroundIV.addSubview(iconIV)
-        backgroundIV.addSubview(titleLbl)
-        backgroundIV.addSubview(itemTitleLbl)
-        backgroundIV.addSubview(itemSubtitleLbl)
-        backgroundIV.addSubview(actionBtn)
+        self.addSubview(iconIV)
+        self.addSubview(titleLbl)
+        self.addSubview(itemTitleLbl)
+        self.addSubview(itemSubtitleLbl)
+        self.addSubview(actionBtn)
         
         if backgroundImage == nil {  backgroundIV.addSubview(bgIconIV); }
         else { bgIconIV.alpha = 0 }

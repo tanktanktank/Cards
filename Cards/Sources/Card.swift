@@ -64,6 +64,7 @@ import UIKit
     @IBInspectable public var backgroundImage: UIImage? {
         didSet{
             self.backgroundIV.image = backgroundImage
+            self.backgroundIVI.image = backgroundImage
         }
     }
     /**
@@ -146,6 +147,8 @@ import UIKit
     weak var superVC: UIViewController?
     var originalFrame = CGRect.zero
     public var backgroundIV = UIImageView()
+    public var backgroundIVI = UIImageView()
+
     public var insets = CGFloat()
     var isPresenting = false
     
@@ -180,6 +183,16 @@ import UIKit
             backgroundIV.backgroundColor = UIColor.white
             super.backgroundColor = UIColor.clear
         }
+        
+        self.addSubview(backgroundIVI)
+        
+        backgroundIVI.isUserInteractionEnabled = true
+        
+        if backgroundIVI.backgroundColor == nil {
+            backgroundIVI.backgroundColor = UIColor.white
+        }
+
+        self.sendSubviewToBack(backgroundIVI)
     }
     
     override open func draw(_ rect: CGRect) {
@@ -199,6 +212,17 @@ import UIKit
         backgroundIV.frame.origin = bounds.origin
         backgroundIV.frame.size = CGSize(width: bounds.width, height: bounds.height)
         contentInset = 6
+        
+        backgroundIVI.image = backgroundImage
+        backgroundIVI.layer.cornerRadius = self.layer.cornerRadius
+        backgroundIVI.clipsToBounds = true
+        backgroundIVI.contentMode = .scaleAspectFill
+        
+        backgroundIVI.frame.origin = bounds.origin
+        backgroundIVI.frame.size = CGSize(width: bounds.width, height: bounds.height)
+        contentInset = 6
+
+        
     }
     
     /**
@@ -299,7 +323,7 @@ extension Card: UIGestureRecognizerDelegate {
 }
 
 
-	//MARK: - Helpers
+    //MARK: - Helpers
 
 extension Card {
     

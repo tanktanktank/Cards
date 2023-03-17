@@ -62,9 +62,10 @@ import UIKit
     override open func initialize() {
         super.initialize()
         
-        backgroundIV.addSubview(titleLbl)
-        backgroundIV.addSubview(subtitleLbl)
-        backgroundIV.addSubview(categoryLbl)
+        self.addSubview(titleLbl)
+        self.addSubview(subtitleLbl)
+        self.addSubview(categoryLbl)
+
     }
     
     
@@ -74,8 +75,8 @@ import UIKit
         super.draw(rect)
         
         categoryLbl.text = category.uppercased()
-        categoryLbl.textColor = textColor.withAlphaComponent(0.3)
-        categoryLbl.font = UIFont.systemFont(ofSize: 100, weight: .bold)
+        categoryLbl.textColor = textColor.withAlphaComponent(0.8)
+        categoryLbl.font = UIFont.systemFont(ofSize: titleSize / 1.5, weight: .bold)
         categoryLbl.shadowColor = UIColor.black
         categoryLbl.shadowOffset = CGSize.zero
         categoryLbl.adjustsFontSizeToFitWidth = true

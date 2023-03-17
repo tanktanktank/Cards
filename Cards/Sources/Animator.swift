@@ -51,6 +51,7 @@ class Animator: NSObject, UIViewControllerAnimatedTransitioning {
                 detailVC.snap.alpha = 1
                 detailVC.layout(self.card.originalFrame, isPresenting: false, isAnimating: false)
                 self.card.addSubview(detailVC.card.backgroundIV)
+                self.card.sendSubviewToBack(detailVC.card.backgroundIV)
                 transitionContext.completeTransition(true)
             })
             
