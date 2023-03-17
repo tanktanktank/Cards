@@ -88,7 +88,10 @@ import UIKit
      */
     override open var backgroundColor: UIColor? {
         didSet(new) {
-            if let color = new { backgroundIV.backgroundColor = color }
+            if let color = new {
+                backgroundIV.backgroundColor = color
+                backgroundIVI.backgroundColor = color
+            }
             if backgroundColor != UIColor.clear { backgroundColor = UIColor.clear }
         }
     }
